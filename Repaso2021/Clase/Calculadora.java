@@ -36,7 +36,7 @@ public class Calculadora {
         
             opcion = scan.nextInt();
             
-        } while(opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4 && opcion != 5 && opcion != 0);
+        } while (opcion < 0 || opcion > 5);
         
         //valorando el contenido de la variable opcion
         if(opcion == 0) {            
