@@ -5,6 +5,7 @@
 package calculadora;
 
 import java.util.Scanner;
+import java.lang.Integer;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Calculadora {
             System.out.println("0. Salir del programa");
             System.out.println("Introduzca una opción válida:");  
         
-            opcion = scan.nextInt();
+            opcion = Integer.parseInt(scan.nextLine());
             
         } while (opcion < 0 || opcion > 5);
         
@@ -80,18 +81,18 @@ public class Calculadora {
         
         
     }
-        
+    
     //método para sumar
     public static double sumar(double num1, double num2){
-        double resultado=0;
+        double resultado;
         resultado = num1 + num2;
         
         return resultado;
     }
-    
+        
     //método para restar
     public static double restar(double num1, double num2){
-        double resultado=0;
+        double resultado;
         resultado = num1 - num2;
         
         return resultado;
@@ -99,7 +100,7 @@ public class Calculadora {
     
     //método para multiplicar
     public static double multiplicar(double num1, double num2){
-        double resultado=0;
+        double resultado;
         resultado = num1 * num2;
         
         return resultado;
@@ -107,7 +108,7 @@ public class Calculadora {
     
     //método para dividir
     public static double dividir(double num1, double num2){
-        double resultado=0;
+        double resultado;
         resultado = num1 / num2;
         
         return resultado;
@@ -115,7 +116,7 @@ public class Calculadora {
     
     //método para obtener el resto
     public static double resto(double num1, double num2){
-        double resultado=0;
+        double resultado;
         resultado = num1 % num2;
         
         return resultado;
