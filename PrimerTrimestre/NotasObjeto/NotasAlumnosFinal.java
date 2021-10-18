@@ -15,43 +15,23 @@ import java.util.Scanner;
  */    
 public class NotasAlumnosFinal {
 
-    //Prueba declarando las variables globales. De esta forma no necesitaría pasaralas como parámetros a la función calcularMedia 
-    //static double nota1,nota2,nota3,nota4,nota5,resultado;
     
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // -----------------------------------------------
-        // -- VERSIÓN 1
-        //double nota1,nota2,nota3,nota4,nota5,resultado;
-        /*nota1=5;
-        nota2=7;
-        nota3=4.5;
-        nota4=9;
-        nota5=3.75;*/
-        // -----------------------------------------------
-
-        // -----------------------------------------------
-        // -- VERSIÓN 2
-        // Primera forma de inicializar
-        /*double[] notas = new double[5];
-        notas[0]=5;
-        notas[1]=7;
-        notas[2]=4.5;
-        notas[3]=9;
-        notas[4]=3.75;*/
         
-        // Segunda forma de inicializar
-        //double[] notas = {5,7,4.5,9,3.75};
-        // ----------------------------------------------
         double[] notas=null;
+        
+        if(args.length ==0){
+            System.out.println("[ERROR] Este programa necesita un parámetro. \n El nombre del profe");
+        }else {
+            System.out.println("Nombre del profesor: "+args[0]);
+        }
+        
         System.out.println("¿Cuántas notas quieres introducir?");
         Scanner sc = new Scanner(System.in);
         int numNotas = sc.nextInt();
         notas= new double[numNotas];
         
-        Notas.notaIncorrecta(numNotas, notas);
+        Notas.notaIncorrecta(notas, sc);
         
         
         /*
@@ -72,26 +52,21 @@ public class NotasAlumnosFinal {
         
         
         // ----------------------------------------------
-        double media = 0;
-        //media = calcularMedia(nota1,nota2,nota3,nota4,nota5);     
+        double media = 0;          
         media = Notas.calcularMedia(notas);     
         
-        System.out.println("La nota media obtenida es: "+media);
+        System.out.println("La nota media obtenida es: "+media);        
         
-        //Formateando a dos decimales
         DecimalFormat df = new DecimalFormat("0.00");  
         df.setRoundingMode(RoundingMode.HALF_UP);  
-        System.out.println("La nota media con dos decimales: "+df.format(media));
+        System.out.println("La nota media con dos decimales: "+df.format(media));        
         
-        //Redondeando al entero más próximo
         System.out.println("La nota media redondeada al entero más próximo es: "+Math.round(media));
         
-        //Quedándonos con el entero (sin redondear)
         int mediaEntera = (int)media;
         
-        System.out.println("La nota media entera obtenida es:"+mediaEntera);
+        System.out.println("La nota media entera obtenida es:"+mediaEntera);        
         
-        // Cargar en un array de String los textos de las calificaciones
         String[] calificaciones = new String[10];
         Notas.inicializaStringTextos(calificaciones);
         
