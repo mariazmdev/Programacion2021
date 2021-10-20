@@ -79,11 +79,11 @@ public class numerosAyB {
         
     }
     
-    public static void numerosPares(int num1, int num2){
+    public static void numerosPares(int A, int B){
         
         int contador = 0;
         
-        for(int i = num1; i <= num2; i++){
+        for(int i = A; i <= B; i++){
             
             if(i%2 == 0){
                 contador++;
