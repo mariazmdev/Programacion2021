@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -19,7 +20,7 @@ public class numerosAyB {
         // TODO code application logic here
         
         Scanner scan = new Scanner(System.in);
-        int num1, num2,opcion;
+        int A, B,opcion;
         
         System.out.println("\n");
         System.out.println("*****PINTAR NÚMEROS*****");
@@ -27,12 +28,12 @@ public class numerosAyB {
         do {
             
             System.out.println("Introduce el primer número: ");
-            num1 = scan.nextInt();
+            A = scan.nextInt();
 
             System.out.println("Introduce el segundo número: ");          
-            num2 = scan.nextInt();
+            B = scan.nextInt();
             
-        }while(num1 < num2);
+        }while(B < A);
         
         
         do {
@@ -46,11 +47,11 @@ public class numerosAyB {
             
             switch (opcion) {
                 case 1:
-                    pintarRangoDeNumeros(num1,num2);
+                    pintarRangoDeNumeros(A,B);
                     break;
                     
                 case 2:
-                    numerosPares(num1,num2);
+                    numerosPares(A,B);
                     break;
                 case 0:
                     System.out.println("*El programa se está cerrando.*");
@@ -66,9 +67,9 @@ public class numerosAyB {
     
     
     
-    public static void pintarRangoDeNumeros(int num1,int num2){
+    public static void pintarRangoDeNumeros(int A,int B){
         
-        for(int i = num2; i <= num1; i++){
+        for(int i = A; i <= B; i++){
             
             System.out.print(i);
         }
@@ -82,7 +83,7 @@ public class numerosAyB {
         
         int contador = 0;
         
-        for(int i = num2; i <= num1; i++){
+        for(int i = num1; i <= num2; i++){
             
             if(i%2 == 0){
                 contador++;
@@ -90,6 +91,7 @@ public class numerosAyB {
         }
         
         System.out.println("Hay un total de " + contador + " números pares.");
+        System.out.println("\n");
         
     }
     
