@@ -4,33 +4,33 @@
  */
 package es.daw.parking.model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author alumnot
  */
-abstract class Parking {
-    protected int capacidad;
-    protected int cantidadGanada;
-    protected String nombre,direccion;
-    protected ArrayList<Coche> Coches;    
-    protected int cantidadTotalPlazas;
-    protected static int ID;
-    protected static int contCoches;
+public class ParkingPublico extends Parking {
 
-    public Parking(int capacidad, String nombre, String direccion) {        
-        this.capacidad = capacidad;        
+    public ParkingPublico(int capacidad, String nombre, String direccion) {
+        super(capacidad, nombre, direccion);
+        
+        this.capacidad = capacidad;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.ID = ID++;
-        this.cantidadTotalPlazas += capacidad;
+    }
+
+    @Override
+    public void porcentajeDeOcupacion() {
+        
+        int porcentaje = Coches.size()/capacidad;
+        
+        System.out.println("El porcentaje de ocupación del parking " + nombre + " es de un " + porcentaje + "%");
+        
     }
     
-    public abstract void porcentajeDeOcupacion();
-    
-    public abstract void porcentajeDeOcupacionTotal();
-    
+    @Override
+    public void porcentajeDeOcupacionTotal() {
+        
+    }
 
     public int getCapacidad() {
         return capacidad;
@@ -56,19 +56,8 @@ abstract class Parking {
         this.direccion = direccion;
     }
 
-    public int getCantidadGanada() {
-        return cantidadGanada;
-    }
-
-    public ArrayList<Coche> getCoches() {
-        return Coches;
-    }
-
-    public int getID() {
-        return ID;
-    }
+    
     
     
     
 }
-
